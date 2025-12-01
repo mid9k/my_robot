@@ -1,0 +1,37 @@
+joint_states_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 200
+
+joint_group_position_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - lf_hip_joint
+    - lf_upper_leg_joint
+    - lf_lower_leg_joint
+    - rf_hip_joint
+    - rf_upper_leg_joint
+    - rf_lower_leg_joint
+    - lh_hip_joint
+    - lh_upper_leg_joint
+    - lh_lower_leg_joint
+    - rh_hip_joint
+    - rh_upper_leg_joint
+    - rh_lower_leg_joint
+
+  # ここで共通のPID設定を定義します（&pid_gains という名前をつけます）
+  # この `pid_gains` の数値を変更するだけで、下部の `*pid_gains` すべてに反映されます
+  common_pid_gains: &pid_gains {p: 1.0, d: 0.0, i: 0}
+
+  gains: 
+    lf_hip_joint        : *pid_gains
+    lf_upper_leg_joint  : *pid_gains
+    lf_lower_leg_joint  : *pid_gains
+    rf_hip_joint        : *pid_gains
+    rf_upper_leg_joint  : *pid_gains
+    rf_lower_leg_joint  : *pid_gains
+    lh_hip_joint        : *pid_gains
+    lh_upper_leg_joint  : *pid_gains
+    lh_lower_leg_joint  : *pid_gains
+    rh_hip_joint        : *pid_gains
+    rh_upper_leg_joint  : *pid_gains
+    rh_lower_leg_joint  : *pid_gains

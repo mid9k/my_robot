@@ -1,0 +1,484 @@
+<?xml version="1.0" ?>
+<robot name="robot_sim" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find robot_sim_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find robot_sim_description)/urdf/robot_sim.trans" />
+<xacro:include filename="$(find robot_sim_description)/urdf/robot_sim.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.0005252204596031618 -0.00019184175566821615 0.02372203813710473" rpy="0 0 0"/>
+    <mass value="1.0"/>
+    <inertia ixx="0.006081" iyy="0.005366" izz="0.00968" ixy="1e-06" iyz="-2.7e-05" ixz="1.4e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lf_hipp_1">
+  <inertial>
+    <origin xyz="0.03015331538259277 0.002186531069731129 0.011451897963831191" rpy="0 0 0"/>
+    <mass value="0.25"/>
+    <inertia ixx="0.000207" iyy="0.000267" izz="0.000208" ixy="-1e-06" iyz="2e-06" ixz="-1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.044687 -0.047373 -0.017674" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/lf_hipp_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.044687 -0.047373 -0.017674" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/lf_hipp_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rf_hipp_1">
+  <inertial>
+    <origin xyz="0.03015037337157648 -0.0007413119719827249 0.011482275702380054" rpy="0 0 0"/>
+    <mass value="0.25"/>
+    <inertia ixx="0.000207" iyy="0.000267" izz="0.000208" ixy="0.0" iyz="-3e-06" ixz="-1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.044687 0.051374 -0.017678" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/rf_hipp_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.044687 0.051374 -0.017678" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/rf_hipp_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lh_hipp_1">
+  <inertial>
+    <origin xyz="-0.029856922704473474 0.0020206181030268666 0.011482293331725565" rpy="0 0 0"/>
+    <mass value="0.25"/>
+    <inertia ixx="0.000207" iyy="0.000267" izz="0.000208" ixy="1e-06" iyz="3e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.046404 -0.047373 -0.017674" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/lh_hipp_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.046404 -0.047373 -0.017674" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/lh_hipp_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rh_hipp_1">
+  <inertial>
+    <origin xyz="-0.02985701671843094 -0.0007331831610426498 0.011482821283024747" rpy="0 0 0"/>
+    <mass value="0.25"/>
+    <inertia ixx="0.000207" iyy="0.000267" izz="0.000208" ixy="-0.0" iyz="-3e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.046404 0.051374 -0.017678" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/rh_hipp_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.046404 0.051374 -0.017678" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/rh_hipp_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lf_up_1">
+  <inertial>
+    <origin xyz="-0.016419062921313177 0.003637269753796246 -0.02678707336544945" rpy="0 0 0"/>
+    <mass value="0.0625"/>
+    <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.065361 -0.074642 -0.01539" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/lf_up_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.065361 -0.074642 -0.01539" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/lf_up_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rf_up_1">
+  <inertial>
+    <origin xyz="-0.0164200310998035 -0.003944072054624034 -0.026733120225738486" rpy="0 0 0"/>
+    <mass value="0.0625"/>
+    <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.065361 0.077374 -0.01579" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/rf_up_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.065361 0.077374 -0.01579" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/rf_up_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lh_up_1">
+  <inertial>
+    <origin xyz="-0.016340315083238258 0.003944463350645688 -0.026737906931428364" rpy="0 0 0"/>
+    <mass value="0.0625"/>
+    <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.08673 -0.074672 -0.015786" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/lh_up_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.08673 -0.074672 -0.015786" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/lh_up_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rh_up_1">
+  <inertial>
+    <origin xyz="-0.016686433486496274 -0.003958453231412792 -0.026710968347183412" rpy="0 0 0"/>
+    <mass value="0.0625"/>
+    <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.08673 0.077375 -0.015807" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/rh_up_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.08673 0.077375 -0.015807" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/rh_up_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lf_foot_1">
+  <inertial>
+    <origin xyz="0.003146149042842633 -4.0777872519534575e-05 -0.0023908828751956906" rpy="0 0 0"/>
+    <mass value="0.0625"/>
+    <inertia ixx="0.0001" iyy="0.0001" izz="0.0001" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.065198 -0.083946 0.067164" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/lf_foot_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.065198 -0.083946 0.067164" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/lf_foot_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rf_foot_1">
+  <inertial>
+    <origin xyz="0.003146563459573884 5.3378327768291434e-05 -0.0023910133980219184" rpy="0 0 0"/>
+    <mass value="0.0625"/>
+    <inertia ixx="0.0001" iyy="0.0001" izz="0.0001" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.064738 0.087874 0.066283" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/rf_foot_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.064738 0.087874 0.066283" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/rf_foot_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lh_foot_1">
+  <inertial>
+    <origin xyz="0.0031466132562136817 5.379185311012169e-05 -0.002390894290727974" rpy="0 0 0"/>
+    <mass value="0.0625"/>
+    <inertia ixx="0.0001" iyy="0.0001" izz="0.0001" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.08771 -0.085172 0.066059" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/lh_foot_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.08771 -0.085172 0.066059" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/lh_foot_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rh_foot_1">
+  <inertial>
+    <origin xyz="0.0031468710440486353 4.940379671491968e-05 -0.0023912075919742537" rpy="0 0 0"/>
+    <mass value="0.0625"/>
+    <inertia ixx="0.0001" iyy="0.0001" izz="0.0001" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.088419 0.087931 0.066223" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/rh_foot_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.088419 0.087931 0.066223" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/rh_foot_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lf_low_1">
+  <inertial>
+    <origin xyz="0.009183069925470574 0.0023976567053376058 -0.007108956563643944" rpy="0 0 0"/>
+    <mass value="0.125"/>
+    <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.025556 -0.08189 0.036525" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/lf_low_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.025556 -0.08189 0.036525" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/lf_low_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rf_low_1">
+  <inertial>
+    <origin xyz="0.008957472165061098 -0.0025000107553799916 -0.006903547188052195" rpy="0 0 0"/>
+    <mass value="0.125"/>
+    <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.025541 0.085374 0.036003" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/rf_low_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.025541 0.085374 0.036003" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/rf_low_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lh_low_1">
+  <inertial>
+    <origin xyz="0.008946743217155245 0.0025004027699619402 -0.0069063248962129495" rpy="0 0 0"/>
+    <mass value="0.125"/>
+    <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.126873 -0.082672 0.035757" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/lh_low_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.126873 -0.082672 0.035757" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/lh_low_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rh_low_1">
+  <inertial>
+    <origin xyz="0.008855525446896786 -0.0025045709939809507 -0.0070043673693002545" rpy="0 0 0"/>
+    <mass value="0.125"/>
+    <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.127203 0.08541 0.035472" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/rh_low_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.127203 0.08541 0.035472" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_sim_description/meshes/rh_low_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="lf_hip_joint" type="revolute">
+  <origin xyz="0.044687 0.047373 0.017674" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lf_hipp_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit upper="0.57" lower="-0.57" effort="100" velocity="100"/>
+</joint>
+
+<joint name="rf_hip_joint" type="revolute">
+  <origin xyz="0.044687 -0.051374 0.017678" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rf_hipp_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit upper="0.57" lower="-0.57" effort="100" velocity="100"/>
+</joint>
+
+<joint name="lh_hip_joint" type="revolute">
+  <origin xyz="-0.046404 0.047373 0.017674" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lh_hipp_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit upper="0.57" lower="-0.57" effort="100" velocity="100"/>
+</joint>
+
+<joint name="rh_hip_joint" type="revolute">
+  <origin xyz="-0.046404 -0.051374 0.017678" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rh_hipp_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit upper="0.57" lower="-0.57" effort="100" velocity="100"/>
+</joint>
+
+<joint name="lf_upper_leg_joint" type="revolute">
+  <origin xyz="0.020674 0.027269 -0.002284" rpy="0 0 0"/>
+  <parent link="lf_hipp_1"/>
+  <child link="lf_up_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+  <limit upper="0.62" lower="-0.62" effort="100" velocity="100"/>
+</joint>
+
+<joint name="rf_upper_leg_joint" type="revolute">
+  <origin xyz="0.020674 -0.026 -0.001888" rpy="0 0 0"/>
+  <parent link="rf_hipp_1"/>
+  <child link="rf_up_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+  <limit upper="0.62" lower="-0.62" effort="100" velocity="100"/>
+</joint>
+
+<joint name="lh_upper_leg_joint" type="revolute">
+  <origin xyz="-0.040326 0.027299 -0.001888" rpy="0 0 0"/>
+  <parent link="lh_hipp_1"/>
+  <child link="lh_up_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+  <limit upper="0.62" lower="-0.62" effort="100" velocity="100"/>
+</joint>
+
+<joint name="rh_upper_leg_joint" type="revolute">
+  <origin xyz="-0.040326 -0.026001 -0.001871" rpy="0 0 0"/>
+  <parent link="rh_hipp_1"/>
+  <child link="rh_up_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+  <limit upper="0.62" lower="-0.62" effort="100" velocity="100"/>
+</joint>
+
+<joint name="rig_lf" type="fixed">
+  <origin xyz="0.039642 0.002056 -0.030639" rpy="0 0 0"/>
+  <parent link="lf_low_1"/>
+  <child link="lf_foot_1"/>
+</joint>
+
+<joint name="rig_rf" type="fixed">
+  <origin xyz="0.039197 -0.0025 -0.03028" rpy="0 0 0"/>
+  <parent link="rf_low_1"/>
+  <child link="rf_foot_1"/>
+</joint>
+
+<joint name="rig_lh" type="fixed">
+  <origin xyz="0.039163 0.0025 -0.030302" rpy="0 0 0"/>
+  <parent link="lh_low_1"/>
+  <child link="lh_foot_1"/>
+</joint>
+
+<joint name="rig_rh" type="fixed">
+  <origin xyz="0.038784 -0.002521 -0.030751" rpy="0 0 0"/>
+  <parent link="rh_low_1"/>
+  <child link="rh_foot_1"/>
+</joint>
+
+<joint name="lf_lower_leg_joint" type="revolute">
+  <origin xyz="-0.039805 0.007248 -0.051915" rpy="0 0 0"/>
+  <parent link="lf_up_1"/>
+  <child link="lf_low_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+  <limit upper="0.610865" lower="-0.610865" effort="100" velocity="100"/>
+</joint>
+
+<joint name="rf_lower_leg_joint" type="revolute">
+  <origin xyz="-0.03982 -0.008 -0.051793" rpy="0 0 0"/>
+  <parent link="rf_up_1"/>
+  <child link="rf_low_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+  <limit upper="0.610865" lower="-0.610865" effort="100" velocity="100"/>
+</joint>
+
+<joint name="lh_lower_leg_joint" type="revolute">
+  <origin xyz="-0.040143 0.008 -0.051543" rpy="0 0 0"/>
+  <parent link="lh_up_1"/>
+  <child link="lh_low_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+  <limit upper="0.610865" lower="-0.610865" effort="100" velocity="100"/>
+</joint>
+
+<joint name="rh_lower_leg_joint" type="revolute">
+  <origin xyz="-0.040473 -0.008035 -0.051279" rpy="0 0 0"/>
+  <parent link="rh_up_1"/>
+  <child link="rh_low_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+  <limit upper="0.610865" lower="-0.610865" effort="100" velocity="100"/>
+</joint>
+
+</robot>

@@ -1,0 +1,13 @@
+services:
+  ros_champ:
+    build: .
+    container_name: ros_champ_container
+    image: ros_champ_image
+    environment:
+      - DISPLAY=host.docker.internal:0.0
+      - LIBGL_ALWAYS_INDIRECT=0
+    volumes:
+      - ../src:/root/catkin_ws/src
+    network_mode: host
+    tty: true
+    stdin_open: true

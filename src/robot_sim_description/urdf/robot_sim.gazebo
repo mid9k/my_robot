@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<robot name="robot_sim" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="body_color" value="Gazebo/Silver" />
+
+<gazebo>
+  <plugin name="control" filename="libgazebo_ros_control.so"/>
+</gazebo>
+<gazebo reference="base_link">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+  <gravity>true</gravity>
+</gazebo>
+
+<gazebo reference="lf_hipp_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="rf_hipp_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="lh_hipp_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="rh_hipp_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="lf_up_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="rf_up_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="lh_up_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="rh_up_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="lf_foot_1">
+  <material>${body_color}</material>
+  <mu1>1.5</mu1>
+  <mu2>1.5</mu2>
+  <selfCollide>false</selfCollide> 
+  <kp>1000000.0</kp> 
+  <kd>1.0</kd>     
+  <minDepth>0.001</minDepth>
+  <maxVel>0.1</maxVel>
+</gazebo>
+
+<gazebo reference="rf_foot_1">
+  <material>${body_color}</material>
+  <mu1>1.5</mu1>
+  <mu2>1.5</mu2>
+  <selfCollide>false</selfCollide> 
+  <kp>1000000.0</kp> 
+  <kd>1.0</kd>     
+  <minDepth>0.001</minDepth>
+  <maxVel>0.1</maxVel>
+</gazebo>
+
+<gazebo reference="lh_foot_1">
+  <material>${body_color}</material>
+  <mu1>1.5</mu1>
+  <mu2>1.5</mu2>
+  <selfCollide>false</selfCollide> 
+  <kp>1000000.0</kp> 
+  <kd>1.0</kd>     
+  <minDepth>0.001</minDepth>
+  <maxVel>0.1</maxVel>
+</gazebo>
+
+<gazebo reference="rh_foot_1">
+  <material>${body_color}</material>
+  <mu1>1.5</mu1>
+  <mu2>1.5</mu2>
+  <selfCollide>false</selfCollide> 
+  <kp>1000000.0</kp> 
+  <kd>1.0</kd>     
+  <minDepth>0.001</minDepth>
+  <maxVel>0.1</maxVel>
+</gazebo>
+
+<gazebo reference="lf_low_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="rf_low_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="lh_low_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="rh_low_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="base_link">
+    <gravity>true</gravity>
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <topic>__default_topic__</topic>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>imu/data</topicName>
+        <bodyName>base_link</bodyName>
+        <updateRateHZ>100.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>base_link</frameName>
+        <initialOrientationAsReference>false</initialOrientationAsReference>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+
+</robot>
